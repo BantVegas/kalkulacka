@@ -10,7 +10,9 @@ import type { IconBaseProps } from "react-icons";
 const CalculatorIcon = dynamic(() =>
   import("react-icons/fa").then((mod) => {
     const Icon = mod.FaCalculator as React.FC<IconBaseProps>;
-    return (props: IconBaseProps) => <Icon {...props} />;
+    const WrappedIcon = (props: IconBaseProps) => <Icon {...props} />;
+    WrappedIcon.displayName = "CalculatorIcon";
+    return WrappedIcon;
   }),
   { ssr: false }
 );
@@ -243,4 +245,5 @@ function CalculatorCard() {
 // Pridaj displayName pre ESLint
 CalculatorCard.displayName = "CalculatorCard";
 export default CalculatorCard;
+
 
