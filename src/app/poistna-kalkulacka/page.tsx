@@ -2,6 +2,7 @@ import HeroSection from "../../components/HeroSection";
 import PoistnaKalkulackaCard from "../../components/PoistnaKalkulackaCard";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import AdBanner from "../../components/AdBanner"; // ← pridaj
 
 // ----- SEO (Next.js App Router 2024/2025) -----
 export const metadata = {
@@ -24,7 +25,7 @@ export const metadata = {
     title: "Poistná kalkulačka",
     description:
       "Online poistná kalkulačka pre výpočet a porovnanie poistenia. Vyberte si to najlepšie poistenie jednoducho a rýchlo.",
-    url: "https://universalkalkulacka.sk/poistna-kalkulacka",
+    url: "https://univerzalkalkulacka.sk/poistna-kalkulacka",
     siteName: "Univerzálna kalkulačka",
     images: [
       {
@@ -56,7 +57,7 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/poistna-kalkulacka"
+    canonical: "https://univerzalkalkulacka.sk/poistna-kalkulacka"
   }
 };
 // -----------------------------------------------
@@ -75,6 +76,8 @@ export default function PoistnaPage() {
       <Navbar />
       <div className="relative z-10 w-full flex flex-col items-center">
         <HeroSection />
+        {/* Reklama pod hero sekciou */}
+        <AdBanner />
         <PoistnaKalkulackaCard />
       </div>
       <Footer />

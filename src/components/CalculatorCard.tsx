@@ -217,17 +217,38 @@ function CalculatorCard() {
                 .
               </span>
             </p>
-            <p>
-              Váš zadaný hrubý príjem: <b>{summary.hruba?.toLocaleString("sk-SK")} €</b>
-            </p>
-            <p>
-              Deti do 15 rokov: <b>{summary.detiDo15}</b> &nbsp;|&nbsp; Deti nad 15 rokov: <b>{summary.detiNad15}</b>
-            </p>
-            <p>
-              <span className="text-indigo-700 font-normal">
-                Z tejto sumy sú už odpočítané odvody ({Math.round(summary.odvody)} €) a daň ({Math.round(summary.dan)} €), pripočítaný daňový bonus ({Math.round(summary.danovyBonus)} €).
-              </span>
-            </p>
+            {/* Výsledková tabuľka */}
+            <div className="overflow-x-auto w-full mt-4">
+              <table className="min-w-full text-sm">
+                <tbody>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Hrubá mzda</td>
+                    <td className="break-words p-2">{summary.hruba?.toLocaleString("sk-SK")} €</td>
+                  </tr>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Odvody</td>
+                    <td className="break-words p-2">{Math.round(summary.odvody || 0).toLocaleString("sk-SK")} €</td>
+                  </tr>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Daň</td>
+                    <td className="break-words p-2">{Math.round(summary.dan || 0).toLocaleString("sk-SK")} €</td>
+                  </tr>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Daňový bonus</td>
+                    <td className="break-words p-2">{Math.round(summary.danovyBonus || 0).toLocaleString("sk-SK")} €</td>
+                  </tr>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Deti do 15 rokov</td>
+                    <td className="break-words p-2">{summary.detiDo15 || 0}</td>
+                  </tr>
+                  <tr>
+                    <td className="break-words p-2 font-semibold">Deti nad 15 rokov</td>
+                    <td className="break-words p-2">{summary.detiNad15 || 0}</td>
+                  </tr>
+                  {/* Ďalšie podrobnosti podľa potreby */}
+                </tbody>
+              </table>
+            </div>
             <p>
               Ďakujeme, že ste použili našu kalkulačku.
               <br />
@@ -245,5 +266,4 @@ function CalculatorCard() {
 // Pridaj displayName pre ESLint
 CalculatorCard.displayName = "CalculatorCard";
 export default CalculatorCard;
-
 

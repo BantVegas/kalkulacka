@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Univerzálna finančná kalkulačka",
     description:
       "Online kalkulačka zadarmo. Vypočítajte si čistú mzdu, dane, úver, poistenie alebo investície na jednom mieste. Vždy aktuálne podľa legislatívy SR.",
-    url: "https://universalkalkulacka.sk",
+    url: "https://univerzalkalkulacka.sk",
     siteName: "Univerzálna Kalkulačka",
     images: [
       {
@@ -64,6 +65,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk">
+      <head>
+        {/* Google AdSense script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8005465650143173"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

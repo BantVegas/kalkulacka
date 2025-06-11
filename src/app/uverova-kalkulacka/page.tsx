@@ -2,6 +2,7 @@ import HeroSection from "../../components/HeroSection";
 import UverovaKalkulackaCard from "../../components/UverovaKalkulackaCard";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import AdBanner from "../../components/AdBanner"; // ← pridaj reklamu
 
 // ----- SEO (Next.js App Router 2024/2025) -----
 export const metadata = {
@@ -25,7 +26,7 @@ export const metadata = {
     title: "Úverová kalkulačka",
     description:
       "Vypočítajte si úver, pôžičku alebo hypotéku online. Prehľadná kalkulačka na výpočet splátok a celkového preplatenia.",
-    url: "https://universalkalkulacka.sk/uverova-kalkulacka",
+    url: "https://univezalkalkulacka.sk/uverova-kalkulacka", // OPRAVENÉ!
     siteName: "Univerzálna kalkulačka",
     images: [
       {
@@ -57,7 +58,7 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/uverova-kalkulacka"
+    canonical: "https://univezalkalkulacka.sk/uverova-kalkulacka" // OPRAVENÉ!
   }
 };
 // -----------------------------------------------
@@ -76,6 +77,8 @@ export default function UverovaPage() {
       <Navbar />
       <div className="relative z-10 w-full flex flex-col items-center">
         <HeroSection />
+        {/* Reklama pod hero sekciou */}
+        <AdBanner />
         <UverovaKalkulackaCard />
       </div>
       <Footer />

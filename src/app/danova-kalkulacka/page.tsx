@@ -2,6 +2,7 @@ import HeroSection from "../../components/HeroSection";
 import DanovaKalkulackaCard from "../../components/DanovaKalkulackaCard";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import AdBanner from "../../components/AdBanner"; // ← PRIDAJ tento riadok
 
 // ----- SEO (Next.js App Router 2024/2025) -----
 export const metadata = {
@@ -24,7 +25,7 @@ export const metadata = {
     title: "Daňová kalkulačka",
     description:
       "Vypočítajte si daň z príjmu rýchlo a jednoducho. Univerzálna kalkulačka pre SZČO aj firmy.",
-    url: "https://universalkalkulacka.sk/danova-kalkulacka",
+    url: "https://univerzalkalkulacka.sk/danova-kalkulacka",
     siteName: "Univerzálna kalkulačka",
     images: [
       {
@@ -56,7 +57,7 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/danova-kalkulacka"
+    canonical: "https://univerzalkalkulacka.sk/danova-kalkulacka"
   }
 };
 // -----------------------------------------------
@@ -75,6 +76,8 @@ export default function DanovaPage() {
       <Navbar />
       <div className="relative z-10 w-full flex flex-col items-center">
         <HeroSection />
+        {/* REKLAMA pod hero sekciou */}
+        <AdBanner />
         <DanovaKalkulackaCard />
       </div>
       <Footer />

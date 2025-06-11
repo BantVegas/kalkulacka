@@ -2,6 +2,7 @@ import HeroSection from "../../components/HeroSection";
 import InvesticnaKalkulackaCard from "../../components/InvesticnaKalkulackaCard";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import AdBanner from "../../components/AdBanner"; // ← Pridaj import
 
 // ----- SEO (Next.js App Router 2024/2025) -----
 export const metadata = {
@@ -24,7 +25,7 @@ export const metadata = {
     title: "Investičná kalkulačka",
     description:
       "Vypočítajte si výnos z investícií, úroky a dlhodobé zhodnotenie. Univerzálna investičná kalkulačka online.",
-    url: "https://universalkalkulacka.sk/investicna-kalkulacka",
+    url: "https://univerzalkalkulacka.sk/investicna-kalkulacka",
     siteName: "Univerzálna kalkulačka",
     images: [
       {
@@ -56,7 +57,7 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/investicna-kalkulacka"
+    canonical: "https://univerzalkalkulacka.sk/investicna-kalkulacka"
   }
 };
 // -----------------------------------------------
@@ -75,6 +76,8 @@ export default function InvesticnaPage() {
       <Navbar />
       <div className="relative z-10 w-full flex flex-col items-center">
         <HeroSection />
+        {/* Reklama pod Hero sekciou */}
+        <AdBanner />
         <InvesticnaKalkulackaCard />
       </div>
       <Footer />

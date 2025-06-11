@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://tvojadomena.sk";
+  const baseUrl = "https://univerzalkalkulacka.sk";
   const clanky = [
     "ako-sa-vypocita-cista-a-hruba-mzda",
     "ako-funguje-poistenie-na-slovensku",
