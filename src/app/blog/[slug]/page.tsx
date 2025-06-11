@@ -177,8 +177,7 @@ const badgeClass = (category: string) =>
 // ===========================
 // STATIC PARAMS PRE BUILD
 // ===========================
-// Pozor: musíš vrátiť [{ slug: "..." }, ...], nie { params: ... }
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
+export function generateStaticParams(): { slug: string }[] {
   return clanky.map((c) => ({ slug: c.slug }));
 }
 export const dynamicParams = false;
@@ -260,11 +259,11 @@ export async function generateMetadata({
 // ============================
 // HLAVNÝ KOMPONENT STRÁNKY
 // ============================
-export default async function BlogArticlePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+type BlogArticlePageProps = {
+  params: { slug: string }
+};
+
+export default function BlogArticlePage({ params }: BlogArticlePageProps) {
   const article = clanky.find((c) => c.slug === params.slug);
 
   if (!article) {
