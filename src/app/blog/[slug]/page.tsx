@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
+import Image from "next/image";
 
 // ==========================
 // KOMPLETNÁ DATABÁZA ČLÁNKOV
@@ -328,10 +329,13 @@ export default async function BlogArticlePage({
           {/* Obrázok v záhlaví */}
           <div className="w-full h-44 rounded-2xl overflow-hidden mb-7 flex items-center justify-center bg-gradient-to-br from-blue-100 via-indigo-100 to-sky-50">
             {article.image ? (
-              <img
+              <Image
                 src={article.image}
                 alt={article.title}
                 className="object-cover w-full h-full rounded-2xl"
+                width={800}
+                height={176}
+                priority
                 itemProp="image"
               />
             ) : (

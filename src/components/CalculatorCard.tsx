@@ -15,7 +15,7 @@ const CalculatorIcon = dynamic(() =>
   { ssr: false }
 );
 
-export default function CalculatorCard() {
+function CalculatorCard() {
   const [fields, setFields] = useState({
     hrubaMzda: "",
     inyPrijem: "",
@@ -239,4 +239,8 @@ export default function CalculatorCard() {
     </>
   );
 }
+
+// Pridaj displayName pre ESLint
+CalculatorCard.displayName = "CalculatorCard";
+export default CalculatorCard;
 
