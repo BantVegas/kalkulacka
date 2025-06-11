@@ -88,7 +88,22 @@ export default function Home() {
       </div>
 
       {/* Obsah bez bieleho obalu */}
-      <div className="relative z-10 w-full flex flex-col items-center px-4 py-6">
+      <div
+        className="
+          relative 
+          z-10 
+          w-full 
+          flex 
+          flex-col 
+          items-center 
+          px-4 
+          py-6 
+          max-w-screen-lg
+          mx-auto
+          sm:px-6 
+          md:px-10
+        "
+      >
         <HeroSection />
         <CalculatorCard />
       </div>
