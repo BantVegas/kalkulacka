@@ -259,11 +259,11 @@ export async function generateMetadata({
 // ============================
 // HLAVNÝ KOMPONENT STRÁNKY
 // ============================
-type BlogArticlePageProps = {
+export default function BlogArticlePage({
+  params,
+}: {
   params: { slug: string }
-};
-
-export default function BlogArticlePage({ params }: BlogArticlePageProps) {
+}) {
   const article = clanky.find((c) => c.slug === params.slug);
 
   if (!article) {
