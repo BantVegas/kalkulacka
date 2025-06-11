@@ -177,8 +177,9 @@ const badgeClass = (category: string) =>
 // ===========================
 // STATIC PARAMS PRE BUILD
 // ===========================
-export async function generateStaticParams(): Promise<{ params: { slug: string } }[]> {
-  return clanky.map((c) => ({ params: { slug: c.slug } }));
+// Pozor: musíš vrátiť [{ slug: "..." }, ...], nie { params: ... }
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  return clanky.map((c) => ({ slug: c.slug }));
 }
 export const dynamicParams = false;
 
