@@ -14,7 +14,6 @@ export default function Home() {
   const kalkWidth = 240;
   const kalkHeight = 330;
 
-  // Animácia pohybu SVG kalkulačky
   useEffect(() => {
     function move() {
       setPos(prev => {
@@ -42,11 +41,10 @@ export default function Home() {
         return { left: newLeft, top: newTop };
       });
     }
-    const interval = setInterval(move, 16); // cca 60fps
+    const interval = setInterval(move, 16);
     return () => clearInterval(interval);
   }, []);
 
-  // Pri zmene veľkosti okna upraví pozíciu SVG kalkulačky
   useEffect(() => {
     function handleResize() {
       setPos(prev => {
@@ -79,6 +77,7 @@ export default function Home() {
       <div className="w-full relative z-20">
         <Navbar />
       </div>
+
       {/* SVG kalkulačka v pozadí */}
       <div
         className="pointer-events-none fixed top-0 left-0 w-screen h-screen z-0"
@@ -87,31 +86,13 @@ export default function Home() {
       >
         <Kalkulacka left={pos.left} top={pos.top} />
       </div>
-      {/* Overlay obsah */}
-      <div className="relative z-10 w-full flex flex-col items-center">
-        <div
-          className="
-            max-w-full
-            sm:max-w-2xl
-            md:max-w-3xl
-            w-full
-            px-2
-            sm:px-6
-            md:px-10
-            py-4
-            sm:py-8
-            md:py-10
-            my-4
-            sm:my-10
-            mx-auto
-            rounded-xl
-            shadow-xl
-          "
-        >
-          <HeroSection />
-          <CalculatorCard />
-        </div>
+
+      {/* Obsah bez bieleho obalu */}
+      <div className="relative z-10 w-full flex flex-col items-center px-4 py-6">
+        <HeroSection />
+        <CalculatorCard />
       </div>
+
       {/* Footer */}
       <div className="w-full relative z-20">
         <Footer />
@@ -119,4 +100,5 @@ export default function Home() {
     </main>
   );
 }
+
 
