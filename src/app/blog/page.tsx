@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// ----- SEO (Next.js App Router 2024/2025) -----
+// --- SEO metadata (Next.js App Router) ---
 export const metadata = {
   title: "Blog | Univerzálna kalkulačka",
   description:
@@ -57,12 +57,20 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/blog"
+    canonical: "/blog",
   }
 };
-// -----------------------------------------------
 
-const clanky = [
+// --- Typ článku ---
+type Clanok = {
+  slug: string;
+  title: string;
+  perex: string;
+  date: string;
+  category: string;
+};
+
+const clanky: Clanok[] = [
   {
     slug: "ako-sa-vypocita-cista-a-hruba-mzda",
     title: "Ako sa vypočíta čistá a hrubá mzda?",
@@ -128,4 +136,5 @@ export default function BlogPage() {
     </>
   );
 }
+
 

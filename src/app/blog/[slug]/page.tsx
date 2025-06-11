@@ -177,7 +177,7 @@ const badgeClass = (category: string) =>
 // ===========================
 // STATIC PARAMS PRE BUILD
 // ===========================
-export function generateStaticParams(): { slug: string }[] {
+export function generateStaticParams() {
   return clanky.map((c) => ({ slug: c.slug }));
 }
 export const dynamicParams = false;
@@ -369,3 +369,4 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
     </>
   );
 }
+
