@@ -21,7 +21,7 @@ export const metadata = {
     title: "O nás | Univerzálna kalkulačka",
     description:
       "Univerzálna kalkulačka je slovenský projekt, ktorý prináša moderné a spoľahlivé kalkulačky pre každého. Viac o autorovi a histórii webu.",
-    url: "https://universalkalkulacka.sk/o-nas",
+    url: "https://univerzalkalkulacka.sk/o-nas",
     siteName: "Univerzálna kalkulačka",
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata = {
     }
   },
   alternates: {
-    canonical: "https://universalkalkulacka.sk/o-nas"
+    canonical: "https://univerzalkalkulacka.sk/o-nas"
   }
 };
 // -----------------------------------------------

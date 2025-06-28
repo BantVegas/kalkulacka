@@ -7,7 +7,7 @@ const GDPR_TEXT = (
     Tento web nespracováva osobné údaje. Pri využívaní kalkulačiek nezadávate žiadne informácie, ktoré by umožnili vašu identifikáciu.<br />
     <br />
     Prevádzkovateľ: Martin Lukáč, Doležalova 15c, 821 04 Bratislava.<br />
-    <b>Kontakt:</b> webappmaster@webappmaster.sk
+    <b>Kontakt:</b> info@webappmaster.sk
   </div>
 );
 
@@ -25,7 +25,7 @@ const CONTACT_TEXT = (
     Martin Lukáč<br />
     Doležalova 15c, 821 04 Bratislava<br />
     tel.: <a href="tel:+421950889523" className="text-sky-600 hover:underline">0950 889 523</a><br />
-    e-mail: <a href="mailto:webappmaster@webappmaster.sk" className="text-sky-600 hover:underline">webappmaster@webappmaster.sk</a><br />
+    e-mail: <a href="mailto:info@webappmaster.sk" className="text-sky-600 hover:underline">webappmaster@webappmaster.sk</a><br />
     www.webappmaster.sk
   </div>
 );

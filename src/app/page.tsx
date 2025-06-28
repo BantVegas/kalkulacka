@@ -7,6 +7,24 @@ import HeroSection from "../components/HeroSection";
 import CalculatorCard from "../components/CalculatorCard";
 import Kalkulacka from "../components/kalkulacka";
 
+// --- Hodnotná informačná sekcia pod Hero ---
+function InfoSection() {
+  return (
+    <section className="w-full max-w-2xl mx-auto py-6 px-4 bg-white/40 backdrop-blur-md rounded-xl shadow-md mt-2 mb-6">
+      <h2 className="text-xl font-semibold mb-2">O univerzálnej kalkulačke</h2>
+      <p className="mb-3 text-base sm:text-lg md:text-xl text-slate-800">
+        Univerzálna kalkulačka je moderný slovenský portál na <b>výpočet daní, odvodov, úverov, investícií, poistného aj iných finančných výpočtov</b>. Všetko rýchlo, anonymne, zdarma a podľa aktuálnych zákonov SR.
+      </p>
+      <p className="mb-2 text-sm sm:text-base text-slate-700">
+        Vyber si kalkulačku podľa svojich potrieb, zadaj údaje a zisti výsledok okamžite. Tento portál je určený pre podnikateľov, zamestnancov aj bežných ľudí, ktorí chcú mať jasné čísla vždy po ruke.
+      </p>
+      <p className="text-xs text-slate-500">
+        Výsledky sú orientačné. Ak potrebuješ detailné poradenstvo, kontaktuj účtovníka, banku alebo makléra. V prípade otázok si prečítaj sekciu FAQ alebo nás kontaktuj.
+      </p>
+    </section>
+  );
+}
+
 export default function Home() {
   const [pos, setPos] = useState({ left: 0, top: 0 });
   const direction = useRef({ x: 1, y: 1 });
@@ -67,7 +85,7 @@ export default function Home() {
     <main
       className="relative flex flex-col items-center min-h-screen w-full"
       style={{
-        backgroundImage: "url('images/hero.png')",
+        backgroundImage: "url('/images/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -87,7 +105,7 @@ export default function Home() {
         <Kalkulacka left={pos.left} top={pos.top} />
       </div>
 
-      {/* Obsah bez bieleho obalu */}
+      {/* Obsah */}
       <div
         className="
           relative 
@@ -105,6 +123,7 @@ export default function Home() {
         "
       >
         <HeroSection />
+        <InfoSection />
         <CalculatorCard />
       </div>
 
